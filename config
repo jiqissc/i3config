@@ -179,3 +179,4 @@ bar {
         mode hide
 }
 
+for_window [class=".*"] border 1pixel
