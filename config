@@ -40,10 +40,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
+bindsym $mod+j focus left
+bindsym $mod+k focus down
 bindsym $mod+l focus right
-bindsym $mod+k focus up 
+bindsym $mod+i focus up 
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -52,9 +52,9 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+i move up
 bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
