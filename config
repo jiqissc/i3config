@@ -11,7 +11,7 @@
 
 set $mod Mod4
 
-exec feh --bg-center /home/jiqissc/imgs/debian.jpg
+exec feh --bg-center /home/mark/imgs/debian.jpg
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -162,6 +162,7 @@ mode "system" {
     bindsym h exec --no-startup-id ~/.i3/i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id ~/.i3/i3exit reboot, mode "default"
     bindsym Shift+s exec --no-startup-id ~/.i3/i3exit shutdown, mode "default"
+    bindsym w exec --no-startup-id ~/.i3/i3exit switch, mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -180,3 +181,16 @@ bar {
 }
 
 for_window [class=".*"] border 1pixel
+
+
+# Volume
+bindsym $mod+F10 exec --no-startup-id amixer -c 1 -q set Master 1dB+ unmute
+bindsym $mod+F9 exec --no-startup-id amixer -c 1 -q set Master 1dB- unmute
+bindsym $mod+F8 exec --no-startup-id amixer -c 1 -q set Speaker toggle && amixer -c 1 -q set Master 0dB+ unmute
+
+#brightness
+bindsym $mod+F7 exec --no-startup-id cat /sys/class/backlight/intel_backlight/brightness|awk '{print $0+10}' > /sys/class/backlight/intel_backlight/brightness
+bindsym $mod+F6 exec --no-startup-id cat /sys/class/backlight/intel_backlight/brightness|awk '{print $0-10}' > /sys/class/backlight/intel_backlight/brightness
+
+bindsym $mod+XF86PowerOff exec --no-startup-id ~/.i3/i3exit shutdown, mode "default" 
+
